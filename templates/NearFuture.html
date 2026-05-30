@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <title>HTML یادگیری</title>
+   <link rel="icon" type="image/png"
+      href="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png">
+    <style>
+        /* اگر می‌خواهید موقعیت‌های لینک‌ها را بر اساس <body> تنظیم کنید، <body> را به relative بسازید */
+        body{
+            position: relative;   /* برای ایجاد یک بلوک «مقدار مرجع» */
+            font-family: 'B Nazanin', sans-serif;
+            font-size: 23px;
+            color: black;
+            text-align: right;
+        }
+        .lang-en{
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+        text-decoration: none;}
+
+        
+        .topMenu-right {
+    display: flex;
+    justify-content: center; /* وسط‌چین */
+    align-items: center;
+    gap: 20px; /* فاصله بین دکمه‌ها */
+    padding: 15px;
+    flex-wrap: wrap; /* در موبایل به خط بعد برود */
+    margin-left: 45cm;
+}
+
+    .blueGradientButton {
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #002060;
+    font-weight: bold;
+    font-size: 20px;
+    /* background: linear-gradient(135deg, #2196F3, #0D47A1); */
+    transition: all 0.3s ease;
+    }
+
+    .blueGradientButton:hover {
+        background: #002060;
+        color: #fff;
+        border: 1px solid #002060;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .blueGradientButtonCurrent {
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #002060;
+    font-weight: bold;
+    background: #eef4ff;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    }
+
+    .blueGradientButtonCurrent:hover {
+        background: #002060;
+        color: #fff;
+        border: 1px solid #002060;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .hero{
+    text-align:center;
+    margin-top:150px;}
+
+    .title{
+    color:black;
+    font-size:60px;
+    margin-bottom:0;
+    }
+
+    .subtitle{
+    color:black;
+    font-size:20px;
+    opacity:0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay:2.2s;
+    margin-top:1px;}
+
+    @keyframes typing{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+    @keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+         body {
+        background: url("https://uploadkon.ir/uploads/51a130_26ebfd4c46-902f-4aab-a5f4-463fbb09fa43.png") no-repeat center center fixed;
+        background-size: cover;
+    }
+       
+
+     .wrapper {
+      display: flex;
+      gap: 10px;
+      height: 87vh; /* ارتفاع کلی دو باکس */ 
+    }
+
+    .box {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      overflow-y: auto; /* اسکرول عمودی */
+      margin-top: 50px;
+      direction: rtl;
+      text-align: justify;
+      font-family: 'B Nazanin', sans-serif;
+      border: 1px solid black;
+    }
+
+    .right-box {
+      max-width: 200px;
+      margin-top: 50px;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item {
+      display: block;
+      margin-bottom: 10px;
+      color: #0077cc;
+      text-decoration: none;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item:hover {
+      text-decoration: underline;
+    }
+    .link-item-current {
+      display: block;
+      margin-bottom: 10px;
+      background: #002060;
+      color: #fff;
+      text-decoration: none;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item-current:hover {
+      text-decoration: underline;
+    }
+
+
+            
+    </style>
+</head>
+<body>
+    <nav class="topMenu-right">
+    <a href="/NearFuture" id="button3" class="blueGradientButtonCurrent"><span class="lang-en">HTML</span>&nbsp;یادگیری🔎</a>
+    <a href="/about" id="button2" class="blueGradientButton">من کیم؟👩‍🎓</a>
+    <a href="/" id="button1" class="blueGradientButton">
+        خانه <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png" width="20" height="20">
+    </a>
+    </nav>
+    
+    <div class="wrapper">
+    
+    <div class="box">
+      <h3>وب‌سایت چطور کار می‌کنه؟</h3>
+    <p>وقتی آدرس یک سایت را در مرورگر وارد می‌کنی، دو طرف درگیر می‌شه:
+    <br><b>کلاینت (<span class="lang-en">Client</span>)👤</b>: کلاینت یعنی دستگاه و مرورگری که دست توست. مثل: گوشی موبایل، لپ‌تاپ، مرورگرهایی مثل <span class="lang-en">Chrome ،Firefox ،Safari</span>
+        
+   کار کلاینت اینکه:
+    <ul>
+    <li>از سرور درخواست بفرستد</li>
+    <li>جواب را بگیرد</li>
+    <li>صفحه وب را به تو نشان بدهد</li>
+    </ul>
+
+    <br><b>سرور (<span class="lang-en">Server</span>)🖥️</b>:سرور یک کامپیوتر همیشه روشن است که فایل‌های سایت روی آن قرار دارد.
+    <br>کار سرور این است که:
+    <ul>
+        <li>درخواست کلاینت را دریافت کند</li>
+        <li>فایل‌ها را پیدا کند</li>
+        <li>آن‌ها را برای مرورگر بفرستد</li>
+    </ul>
+
+
+    <br><b>این وسط <span class="lang-en">HTML</span> چه کاره است؟</b> <span class="lang-en">HTML</span> زبانی است که به مرورگر می‌گوید:
+        <ul>
+            <li>این یک عنوان است</li>
+            <li>این یک پاراگراف است</li>
+            <li>این یک دکمه یا لینک است</li>
+        </ul>
+        
+
+    <br><b>📌 خلاصه خیلی کوتاه</b>   
+        <ul>
+            <li>کلاینت درخواست می‌دهد</li>
+            <li>سرور جواب می‌دهد</li>
+            <li><span class="lang-en">HTML</span> ساختار صفحه را مشخص می‌کند</li>
+        </ul>
+
+    <br>در بخش‌های بعدی، قدم‌به‌قدم <span class="lang-en">HTML</span> را با مثال‌های ساده یاد می‌گیریم 🙂
+    </br>
+    </p>
+    </div>
+
+    <!-- سمت چپ -->
+    <div class="box right-box">
+    <p> <a href="/NearFuture" class="link-item-current" >مفاهیم اولیه</a> 
+     <a href="/HTMLTag" class="link-item">انواع تگ‌ها در <span class="lang-en">HTML</span></a>
+        <a href="/FirstWebPag" class="link-item" >ساخت اولین صفحه وب</a>
+        <a href="/Inspect" class="link-item" > دنیای <span class="lang-en">Inspect</span></a>
+        <a href="/InputOutput" class="link-item" >دریافت ورودی خروجی</a>
+    </p>
+      
+    </div>
+  </div>
+
+
+
+
+    
+
+
+</body>
+</html>

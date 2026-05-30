@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <title>HTML یادگیری</title>
+   <link rel="icon" type="image/png"
+      href="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png">
+    <style>
+        /* اگر می‌خواهید موقعیت‌های لینک‌ها را بر اساس <body> تنظیم کنید، <body> را به relative بسازید */
+        body{
+            position: relative;   /* برای ایجاد یک بلوک «مقدار مرجع» */
+            font-family: 'B Nazanin', sans-serif;
+            font-size: 23px;
+            color: black;
+            text-align: right;
+        }
+        .lang-en{
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+        text-decoration: none;}
+
+        
+        .topMenu-right {
+    display: flex;
+    justify-content: center; /* وسط‌چین */
+    align-items: center;
+    gap: 20px; /* فاصله بین دکمه‌ها */
+    padding: 15px;
+    flex-wrap: wrap; /* در موبایل به خط بعد برود */
+    margin-left: 45cm;
+}
+
+    .blueGradientButton {
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #002060;
+    font-weight: bold;
+    font-size: 20px;
+    /* background: linear-gradient(135deg, #2196F3, #0D47A1); */
+    transition: all 0.3s ease;
+    }
+
+    .blueGradientButton:hover {
+        background: #002060;
+        color: #fff;
+        border: 1px solid #002060;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .blueGradientButtonCurrent {
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #002060;
+    font-weight: bold;
+    background: #eef4ff;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    }
+
+    .blueGradientButtonCurrent:hover {
+        background: #002060;
+        color: #fff;
+        border: 1px solid #002060;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .hero{
+    text-align:center;
+    margin-top:150px;}
+
+    .title{
+    color:black;
+    font-size:60px;
+    margin-bottom:0;
+    }
+
+    .subtitle{
+    color:black;
+    font-size:20px;
+    opacity:0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay:2.2s;
+    margin-top:1px;}
+
+    @keyframes typing{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+    @keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+         body {
+        background: url("https://uploadkon.ir/uploads/51a130_26ebfd4c46-902f-4aab-a5f4-463fbb09fa43.png") no-repeat center center fixed;
+        background-size: cover;
+    }
+       
+
+     .wrapper {
+      display: flex;
+      gap: 10px;
+      height: 87vh; /* ارتفاع کلی دو باکس */ 
+    }
+
+    .box {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      overflow-y: auto; /* اسکرول عمودی */
+      margin-top: 50px;
+      direction: rtl;
+      text-align: justify;
+      font-family: 'B Nazanin', sans-serif;
+      border: 1px solid black;
+    }
+
+    .right-box {
+      max-width: 200px;
+      margin-top: 50px;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item {
+      display: block;
+      margin-bottom: 10px;
+      color: #0077cc;
+      text-decoration: none;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item:hover {
+      text-decoration: underline;
+    }
+    .link-item-current {
+      display: block;
+      margin-bottom: 10px;
+      background: #002060;
+      color: #fff;
+      text-decoration: none;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item-current:hover {
+      text-decoration: underline;
+    }
+
+    .code-box {
+  direction: ltr;
+  text-align: left;
+  background: #f5f5f5; /* خاکستری خیلی روشن */
+  color: #333;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+  font-family: 'B Nazanin', 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.code-box code {
+  background: transparent;
+  color: inherit;
+  white-space: pre-wrap;
+} 
+
+            
+    </style>
+  
+    <script>
+    function calculateOvertime() {
+    const baseInput = document.getElementById("base_salary").value;
+    const hoursInput = document.getElementById("overtime_hours").value;
+
+    // حذف جداکننده هزارگان (کاما) قبل از تبدیل به عدد
+    const cleanedBaseInput = baseInput.replace(/,/g, '');
+    const baseSalary = parseFloat(cleanedBaseInput);
+    const overtimeHours = parseFloat(hoursInput);
+
+    // بررسی خالی نبودن و معتبر بودن مقادیر
+    if (isNaN(baseSalary) || isNaN(overtimeHours) || baseSalary <= 0 || overtimeHours < 0) {
+        document.getElementById("overtime_pay").innerText = "لطفاً مقادیر معتبر و مثبت وارد کنید";
+        return;
+    }
+
+    const regularHours = 192; // فرض بر اینکه 192 ساعت کارکرد عادی در ماه است
+    const overtimeRate = 1.4; // نرخ اضافه کاری 1.4 برابر حقوق عادی
+    const regularHourlyRate = baseSalary / regularHours;
+    const overtimePay = regularHourlyRate * overtimeHours * overtimeRate;
+    const formattedPay = Number(overtimePay.toFixed(0)).toLocaleString('en-US');
+    document.getElementById("overtime_pay").innerHTML = '<span class="lang-en">' +"Overtime Pay: " +  '</span>'+ formattedPay;}
+</script>
+
+    
+</head>
+<body>
+    <nav class="topMenu-right">
+    <a href="/NearFuture" id="button3" class="blueGradientButtonCurrent"><span class="lang-en">HTML</span>&nbsp;یادگیری🔎</a>
+    <a href="/about" id="button2" class="blueGradientButton">من کیم؟👩‍🎓</a>
+    <a href="/" id="button1" class="blueGradientButton">
+        خانه <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png" width="20" height="20">
+    </a>
+    </nav>
+
+    <div class="wrapper">
+        <div class="box">
+        <h3>قراره چیکار کنیم؟</h3>
+            از این به بعد، یادگیری رو با چند تا تمرین عملی ادامه میدیم. توی این تمرین، قراره حقوق پایه و ساعات اضافه کاری افراد رو به عنوان ورودی بگیریم، بعدش حقوق اضافه کاری رو حساب کنیم و نتیجه رو نمایش بدیم. هدف اصلی اینه که با کار کردن با ورودی‌ها، خروجی‌ها و توابع، مهارت‌هامون رو تقویت کنیم. پس بریم که شروع کنیم.
+            <h3>قدم اول - چه طوری ورودی بگیریم؟</h3>
+            همانطور که قبلا تو آموزش تگ‌ها ( <a href="/HTMLTag">اینجا</a> ) 
+            یاد گرفتیم، برای دریافت ورودی باید از تگ <code>&lt;<span class="lang-en">Input</span>&gt;</code> استفاده کنیم. به قطعه کد زیر دقت کنید:
+
+            <pre class="code-box"><code>&lt;input type="text" id="base_salary" placeholder="حقوق پایه"&gt;
+&lt;input type="text" id="overtime_hours" placeholder="ساعت اضافه کاری"&gt;</code></pre>
+
+            <ul>
+               <li>این قطعه کد دو فیلد ورودی متن ایجاد می‌کند.</li>
+                <li><span class="lang-en">type=text</span> مشخص می‌کند که کاربر می‌تواند متن را در آن وارد کند.</li>
+                <li><span class="lang-en">id=base_salary</span> یک شناسه منحصربه‌فرد برای این فیلد است که می‌توان از آن برای ارجاع به این فیلد در کدهای دیگر (مثلاً جاوا اسکریپت برای پردازش) استفاده کرد.</li>
+                <li><span class="lang-en">placeholder</span> متنی راهنما است که درون فیلد نمایش داده می‌شود و به کاربر می‌گوید چه اطلاعاتی باید وارد کند. این متن زمانی که کاربر شروع به تایپ می‌کند، ناپدید می‌شود.</li>
+            </ul>
+            تا اینجا ما حقوق پایه و تعداد ساعات اضافه کاری دریافت کردیم الان باید میزان اضافه حقوق را محاسبه کنیم.
+            <h3>قدم دوم - چه طوری محاسبات لازم انجام بدیم؟</h3>
+            
+            برای محاسبه اضافه کاری با حقوق پایه، ابتدا باید دستمزد هر ساعت کار  را محاسبه کنید (حقوق پایه تقسیم بر تعداد ساعت اجباری در طی یکماه که ما در اینجا 192 در نظر می‌گیریم.). در این صورت اگر ۴۰ درصد از دستمزد هر ساعت کار معمولی را به دستمزد یک ساعت کار اضافه کنید، مبلغ هر ساعت اضافه کاری را محاسبه خواهید کرد. به عنوان مثال اگر برای هر ساعت ۱۰۰ هزار تومان دستمزد دریافت کنید، میزان دستمزد شما برای یک ساعت اضافه کار ۱۴۰ هزار تومان خواهد بود. اما چه طوری توی <span class="lang-en">HTML</span> پیاده‌سازی کنیم؟
+
+            <br> 
+                برای پیاده سازی این موارد نیاز به شناخت از توابع داریم. توابع مثل دستورالعمل‌های آماده یا ماشین‌های کوچک هستند. شما یک ورودی (مثلاً حقوق پایه و ساعت اضافه کاری) به آن‌ها می‌دهید و آن‌ها یک کار مشخص را انجام می‌دهند و یک خروجی (مثلاً کل حقوق) به شما برمی‌گردانند. به قطعه کد زیر دقت کنید:
+            
+            <br>
+           <pre class="code-box"><code> &lt;script&gt;
+        function calculateOvertime() {
+        const baseInput = document.getElementById("base_salary").value;
+        const hoursInput = document.getElementById("overtime_hours").value;
+
+        const regularHours = 192; // فرض بر اینکه 192 ساعت کارکرد عادی در ماه است
+        const overtimeRate = 1.4; // نرخ اضافه کاری 1.4 برابر حقوق عادی
+        const regularHourlyRate = baseSalary / regularHours;
+        const overtimePay = regularHourlyRate * overtimeHours * overtimeRate;
+        document.getElementById("overtime_pay").innerText = "Overtime Pay: " + Number(overtimePay.toFixed(0)).toLocaleString('en-US');
+    }
+    &lt;/script&gt;</code></pre>
+
+
+            این قطعه کد جاوا اسکریپت یک تابع به نام <span class="lang-en">calculateOvertime</span> تعریف می‌کند که برای محاسبه و نمایش حقوق اضافه کاری طراحی شده است.
+بیایید بخش‌های مختلف آن را بررسی کنیم:
+
+            <ul>
+               <li><span class="lang-en">{ ... }()function calculateOvertime </span>: این خط تابع اصلی را تعریف می‌کند. هر کدی که داخل این آکولادها قرار دارد، زمانی اجرا می‌شود که تابع <span class="lang-en">calculateOvertime</span> فراخوانی شود.</li>
+                <li>دو خط بعدی، مقادیری را که کاربر در فیلدهای ورودی با شناسه‌های <span class="lang-en">base_salary</span> (حقوق پایه) و <span class="lang-en">overtime_hours</span> (ساعت اضافه کاری) وارد کرده است، می‌خوانند.</li>
+                <li> دو خط بعدی مقادیر ثابت مورد نیاز برای حل مسئله نیاز است، تعریف می‌شوند.</li>
+                <li>دو خط بعدی محاسبات لازم که در بالا توضیح دادیم انجام می‌شوند.</li>
+                <li>خط آخر هم مسئول نمایش نتیجه محاسبه شده حقوق اضافه کاری در صفحه وب است.</li>
+            </ul>
+            <h3>قدم سوم - چه طوری خروجی را نمایش بدهیم؟</h3>
+            برای نمایش خروجی هم فقط یه به قطعه کد کوتاه نیاز:
+            <pre class="code-box"><code> &lt;p id=overtime_pay&gt;&lt;/p&gt;</code></pre>
+             <br>
+            تبریک میگم، شما اولین تابع <span class="lang-en">HTML</span> نوشتین. خروجی شما چیزی مشابه زیر خواهد بود:
+            <br>
+             <br>
+            <input type="text" id="base_salary" placeholder="حقوق پایه">
+            <input type="text" id="overtime_hours" placeholder="ساعت اضافه کاری">
+            <button onclick="calculateOvertime()">Calculate Overtime Pay</button>
+            <p id="overtime_pay"></p>
+            <script>
+              const input = document.getElementById('base_salary');
+              input.addEventListener('input', function () {
+             let value = this.value.replace(/\D/g, '');
+                  if (value) {value = Number(value).toLocaleString('en-US');}
+                  this.value = value;});
+            </script>
+
+            
+            
+
+            
+        </div>
+    <div class="box right-box">
+        <p> <a href="/NearFuture" class="link-item" >مفاهیم اولیه</a> 
+        <a href="/HTMLTag" class="link-item">انواع تگ‌ها در <span class="lang-en">HTML</span></a>
+        <a href="/FirstWebPag" class="link-item" >ساخت اولین صفحه وب</a>
+        <a href="/Inspect" class="link-item" > دنیای <span class="lang-en">Inspect</span></a>
+        <a href="/InputOutput" class="link-item-current" >دریافت ورودی خروجی</a>
+
+         
+    </p>
+      
+    </div>
+  </div>
+
+</body>
+</html>

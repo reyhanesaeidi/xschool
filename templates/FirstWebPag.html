@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <title>HTML یادگیری</title>
+   <link rel="icon" type="image/png"
+      href="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png">
+    <style>
+        /* اگر می‌خواهید موقعیت‌های لینک‌ها را بر اساس <body> تنظیم کنید، <body> را به relative بسازید */
+        body{
+            position: relative;   /* برای ایجاد یک بلوک «مقدار مرجع» */
+            font-family: 'B Nazanin', sans-serif;
+            font-size: 23px;
+            color: black;
+            text-align: right;
+        }
+        .lang-en{
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+        text-decoration: none;}
+
+        
+        .topMenu-right {
+    display: flex;
+    justify-content: center; /* وسط‌چین */
+    align-items: center;
+    gap: 20px; /* فاصله بین دکمه‌ها */
+    padding: 15px;
+    flex-wrap: wrap; /* در موبایل به خط بعد برود */
+    margin-left: 45cm;
+}
+
+    .blueGradientButton {
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #002060;
+    font-weight: bold;
+    font-size: 20px;
+    /* background: linear-gradient(135deg, #2196F3, #0D47A1); */
+    transition: all 0.3s ease;
+    }
+
+    .blueGradientButton:hover {
+        background: #002060;
+        color: #fff;
+        border: 1px solid #002060;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .blueGradientButtonCurrent {
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #002060;
+    font-weight: bold;
+    background: #eef4ff;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    }
+
+    .blueGradientButtonCurrent:hover {
+        background: #002060;
+        color: #fff;
+        border: 1px solid #002060;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .hero{
+    text-align:center;
+    margin-top:150px;}
+
+    .title{
+    color:black;
+    font-size:60px;
+    margin-bottom:0;
+    }
+
+    .subtitle{
+    color:black;
+    font-size:20px;
+    opacity:0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay:2.2s;
+    margin-top:1px;}
+
+    @keyframes typing{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+    @keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+         body {
+        background: url("https://uploadkon.ir/uploads/51a130_26ebfd4c46-902f-4aab-a5f4-463fbb09fa43.png") no-repeat center center fixed;
+        background-size: cover;
+    }
+       
+
+     .wrapper {
+      display: flex;
+      gap: 10px;
+      height: 87vh; /* ارتفاع کلی دو باکس */ 
+    }
+
+    .box {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      overflow-y: auto; /* اسکرول عمودی */
+      margin-top: 50px;
+      direction: rtl;
+      text-align: justify;
+      font-family: 'B Nazanin', sans-serif;
+      border: 1px solid black;
+    }
+
+    .right-box {
+      max-width: 200px;
+      margin-top: 50px;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item {
+      display: block;
+      margin-bottom: 10px;
+      color: #0077cc;
+      text-decoration: none;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item:hover {
+      text-decoration: underline;
+    }
+    .link-item-current {
+      display: block;
+      margin-bottom: 10px;
+      background: #002060;
+      color: #fff;
+      text-decoration: none;
+      direction: rtl;
+      text-align: center;  
+    }
+
+    .link-item-current:hover {
+      text-decoration: underline;
+    }
+
+    .code-box {
+  direction: ltr;
+  text-align: left;
+  background: #f5f5f5; /* خاکستری خیلی روشن */
+  color: #333;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+  font-family: 'B Nazanin', 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.code-box code {
+  background: transparent;
+  color: inherit;
+  white-space: pre-wrap;
+} 
+
+            
+    </style>
+</head>
+<body>
+    <nav class="topMenu-right">
+    <a href="/NearFuture" id="button3" class="blueGradientButtonCurrent"><span class="lang-en">HTML</span>&nbsp;یادگیری🔎</a>
+    <a href="/about" id="button2" class="blueGradientButton">من کیم؟👩‍🎓</a>
+    <a href="/" id="button1" class="blueGradientButton">
+        خانه <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png" width="20" height="20">
+    </a>
+    </nav>
+    <div class="wrapper">
+        <div class="box">
+            <h3>از کجا شروع کنیم؟</h3>
+        <p>
+            <span class="lang-en">HTML</span> دنیای ساده و کاربردیه. فقط با یاد گرفتن تگ‌ها و کمی دانش مقدماتی پایتون (که در این آموزش کامل توضیحش می‌دم) می‌تونید یک صفحه وب رو روی سیستم خودتون اجرا کنید. قبل از هر چیز، باید بدونیم لوکال یعنی چی؟
+            <br>
+            لوکال، یا همون آدرس <span class="lang-en">http://127.0.0.1:5000</span>، محیطیه که وب‌سایت شما فقط روی کامپیوتر خودتون اجرا می‌شه و بقیه بهش دسترسی ندارن. برای داشتن یه وب‌سایت واقعی که همه ببینن، باید از هاست و سرور استفاده کنید (که توی آموزش‌های بعدی دقیق‌تر یاد می‌گیریم). اما این آموزش فقط برای بالا آوردن وب‌سایت توی محیط لوکال شماست.
+
+            <br>
+            <h3>قدم اول</h3>
+            توی این آموزش قصد داریم دو صفحه وب بالا بیاریم؛ پس تو قدم اول باید دو تا کد <span class="lang-en">HTML</span> ساده بنویسیم:
+                <ul>
+                      <li>صفحه اصلی (<span class="lang-en">Home</span>)</li>
+                      <li>صفحه معرفی (<span class="lang-en">About</span>)</li>
+                </ul>
+
+            <br>کد <span class="lang-en">HTML</span> برای صفحه اصلی (<span class="lang-en">Home</span>) این کد: یک صفحه ساده با یک عنوان و یک پاراگراف خوش‌آمدگویی ایجاد می‌کنه.
+            <pre class="code-box"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fa&quot; dir=&quot;rtl&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;صفحه اصلی&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;به صفحه اصلی خوش آمدید!&lt;/h1&gt;
+    &lt;p&gt;اینجا دنیای سادگی و شروع یادگیری HTML است.&lt;/p&gt;
+    &lt;a&gt;href="/about">درباره من&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <br> کد <span class="lang-en">HTML</span> برای صفحه معرفی (<span class="lang-en">About</span>):این کد، یک صفحه ساده برای معرفی شما با یک تیتر و یک توضیح کوتاه است.
+            <pre class="code-box"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fa&quot; dir=&quot;rtl&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;درباره من&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;درباره من&lt;/h1&gt;
+    &lt;p&gt;من علاقه‌مند به یادگیری و ساخت صفحات وب هستم.&lt;/p&gt;
+    &lt;a&gt;href="/">خانه&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <ul>
+               <li><code>&lt;<span class="lang-en">DOCTYPE html!</span>&gt;</code>: به مرورگر می‌گه که این یک صفحه <span class="lang-en">HTML</span> هست.</li>
+<li><code>&lt;<span class="lang-en">html lang=fa dir=rtl</span>&gt;</code>: کل صفحه رو در بر می‌گیره. <span class="lang-en">lang fa</span> یعنی زبان فارسیه و <span class="lang-en">dir rtl</span> یعنی متن از راست به چپ نوشته می‌شه.
+</li>
+<li><code>&lt;<span class="lang-en">head</span>&gt;</code>: اطلاعاتی درباره صفحه می‌ده که معمولاً نمایش داده نمی‌شن (مثل عنوان صفحه).
+</li>
+<li><code>&lt;<span class="lang-en">meta charset=UTF-8</span>&gt;</code>: تنظیم کاراکترها برای پشتیبانی از زبان فارسی.
+</li>
+<li><code>&lt;<span class="lang-en">meta name=viewport content=width=device-width, initial-scale=1.0</span>&gt;</code>: برای نمایش بهتر در دستگاه‌های مختلف (مثل موبایل).
+</li>
+<li><code>&lt;<span class="lang-en">title</span></code>: متنی که در تب مرورگر نشون داده می‌شه.
+</li>
+<li><code>&lt;<span class="lang-en">body</span>&gt;</code>: محتوای اصلی صفحه رو شامل می‌شه که کاربر می‌بینه.
+</li>
+<li><code>&lt;<span class="lang-en">h1</span>&gt;</code>: تیتر اصلی صفحه (بزرگترین عنوان).
+</li>
+<li><code>&lt;<span class="lang-en">p</span>&gt;</code>: یک پاراگراف متن.</li>
+<li><code>&lt;<span class="lang-en">a</span>&gt;</code>:  ساخت لینک به صفحات دیگر</li>
+
+
+                </ul>
+
+شما باید یک پوشه با عنوان <span class="lang-en">templates</span> ایجاد کنید و این دو فایل با پسوند <span class="lang-en">html.</span> داخل اون ذخیره کنید.
+            فقط توجه داشته باشین پوشه‌ها و مسیرها برای ما مهمه پس حتما با همین اسم پوشه ایجاد کنید.
+
+            <h3>قدم دوم</h3>
+            برای اینکه بتونیم صفحات <span class="lang-en">HTML</span> مختلفی رو در قالب یک وب‌سایت نمایش بدیم، معمولاً از یک فریم‌ورک وب مثل <span class="lang-en">Flask</span> در پایتون استفاده می‌کنیم. <span class="lang-en">Flask</span> به ما اجازه می‌ده که مسیرهای مختلف (<span class="lang-en">URL</span> ها) رو تعریف کنیم و برای هر مسیر، مشخص کنیم که چه محتوایی (کد <span class="lang-en">HTML</span>) نمایش داده بشه.
+
+در این مرحله، یک قطعه کد پایتون می‌نویسیم که صفحات <span class="lang-en">HTML</span> ما رو فراخوانی و نمایش می‌ده. این کد از کتابخانه <span class="lang-en">Flask</span> برای ساخت یک برنامه وب ساده استفاده می‌کنه.
+
+            <pre class="code-box"><code>from flask import Flask, render_template
+
+#Create instance of Flask App
+app = Flask(__name__)
+
+#Create instance of Flask App
+app = Flask(__name__)
+
+#Define Route and Contant of that page
+@app.route("/")
+def home():
+    return render_template("home.html")
+
+#Define 2nd Route and Content
+@app.route("/about")
+def about():
+    return render_template("about.html")</code></pre>
+
+            <ul>
+    <li>
+        <span class="lang-en">from flask import Flask, render_template</span>: 
+        این خط کتابخانه‌های لازم را از <span class="lang-en">Flask</span> وارد می‌کند.
+        <ul>
+            <li><span class="lang-en">Flask</span> برای ساخت برنامه وب استفاده می‌شود.</li>
+            <li><span class="lang-en">Flask</span> برای نمایش فایل‌های <span class="lang-en">HTML</span> به کار می‌رود.</li>
+        </ul>
+    </li>
+    <li>
+        <span class="lang-en">app = Flask(__name__)</span>:
+        یک نمونه از برنامه <span class="lang-en">Flask</span> ساخته می‌شود.
+        <span class="lang-en">Flask</span>__name__</span> به <span class="lang-en">Flask</span> کمک می‌کند مسیر فایل‌ها و منابع برنامه را پیدا کند.
+    </li>
+    <li>
+        <span class="lang-en"> @app.route </span>
+        این خط یک مسیر یا <span class="lang-en">Route</span> برای صفحه اصلی سایت تعریف می‌کند.
+    </li>
+    <li>
+        <span class="lang-en">def home:</span>
+        این تابع زمانی اجرا می‌شود که کاربر وارد صفحه اصلی شود.
+    </li>
+    <li>
+        <span class="lang-en">return render_template("home.html")</span>
+        فایل <span class="lang-en">home.html</span> را از پوشه <span class="lang-en">templates</span> می‌خواند و نمایش می‌دهد.
+    </li>
+    
+</ul>
+
+
+            شما باید این کد با پسوند <span class="lang-en">ipynb.</span> خارج از پوشه <span class="lang-en">templates</span> ایجاد کنید. همانطور که قبلا گفتم مسیرها مهمه پس لطفا دقت کنید.
+
+            <h3>قدم آخر</h3>
+            تنها کاری که مونده اینکه کد پایتون اجرا کنید و مسیر لوکال خودتون یعنی <span class="lang-en">http://127.0.0.1:5000</span> به عنوان <span class="lang-en">URL</span> وارد کنید.
+            <br>
+            دیدی چقدر راحت بووود 😉
+            
+        </br>
+        </p>
+        </div>
+    <div class="box right-box">
+    <p> <a href="/NearFuture" class="link-item" >مفاهیم اولیه</a> 
+     <a href="/HTMLTag" class="link-item">انواع تگ‌ها در <span class="lang-en">HTML</span></a>
+        <a href="/FirstWebPag" class="link-item-current" >ساخت اولین صفحه وب</a>
+        <a href="/Inspect" class="link-item" > دنیای <span class="lang-en">Inspect</span></a>
+        <a href="/InputOutput" class="link-item" >دریافت ورودی خروجی</a>
+    </p>
+      
+    </div>
+  </div>
+
+
+    
+
+
+</body>
+</html>

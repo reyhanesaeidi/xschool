@@ -29,7 +29,7 @@
             gap: 20px;
             padding: 5px;
             margin-top: 20px;
-            margin-right:20px; 
+            margin-left:20px; 
             font-size: 18px;
             font-weight: bold;
         }
@@ -131,33 +131,6 @@
   color: inherit;
   white-space: pre-wrap;
 } 
-
-            
-    </style>
-    
-    <script>
-    function calculateOvertime() {
-    const baseInput = document.getElementById("base_salary").value;
-    const hoursInput = document.getElementById("overtime_hours").value;
-
-    // حذف جداکننده هزارگان (کاما) قبل از تبدیل به عدد
-    const cleanedBaseInput = baseInput.replace(/,/g, '');
-    const baseSalary = parseFloat(cleanedBaseInput);
-    const overtimeHours = parseFloat(hoursInput);
-
-    // بررسی خالی نبودن و معتبر بودن مقادیر
-    if (isNaN(baseSalary) || isNaN(overtimeHours) || baseSalary <= 0 || overtimeHours < 0) {
-        document.getElementById("overtime_pay").innerText = "لطفاً مقادیر معتبر و مثبت وارد کنید";
-        return;
-    }
-
-    const regularHours = 192; // فرض بر اینکه 192 ساعت کارکرد عادی در ماه است
-    const overtimeRate = 1.4; // نرخ اضافه کاری 1.4 برابر حقوق عادی
-    const regularHourlyRate = baseSalary / regularHours;
-    const overtimePay = regularHourlyRate * overtimeHours * overtimeRate;
-    const formattedPay = Number(overtimePay.toFixed(0)).toLocaleString('en-US');
-    document.getElementById("overtime_pay").innerHTML = '<span class="lang-en">' +"Overtime Pay: " +  '</span>'+ formattedPay;}
-</script>
 
     
 </head>

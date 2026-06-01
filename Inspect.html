@@ -1,17 +1,14 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
-
+<html lang="fa">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>من کیم؟</title>
+    <title>HTML یادگیری</title>
 
     <link rel="icon" type="image/png"
         href="images/XSchool.png">
 
     <style>
-         @font-face {
+        @font-face {
             font-family: 'BNazanin';
             src: url('B-NAZANIN.TTF') format('truetype');
             font-size: 30px;
@@ -29,19 +26,22 @@
             background: url("images/GeneralBackground_optimized.webp") no-repeat center center fixed;
             background-size: cover;
         }
-        .lang-en{
+
+        .lang-en {
             font-family: "Times New Roman", Times, serif;
             font-size: 18px;
-        text-decoration: none;}
+        }
 
-        
+        /* منوی بالا */
+
         .topMenu-right {
             display: flex;
             justify-content: flex-start;
+            direction: rtl;
             gap: 20px;
             padding: 5px;
             margin-top: 20px;
-            margin-left:20px; 
+            padding-right: 20px; 
             font-size: 18px;
             font-weight: bold;
         }
@@ -69,9 +69,8 @@
             color: #002060;
             background: #eef4ff;
         }
-       
 
-     .wrapper {
+       .wrapper {
       display: flex;
       gap: 10px;
       height: 87vh; /* ارتفاع کلی دو باکس */ 
@@ -96,6 +95,8 @@
       direction: rtl;
       text-align: center;  
     }
+
+
 
     .link-item {
       display: block;
@@ -123,6 +124,8 @@
       text-decoration: underline;
     }
 
+  
+ 
     .code-box {
   direction: ltr;
   text-align: left;

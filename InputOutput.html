@@ -3,114 +3,71 @@
 <head>
     <meta charset="utf-8">
     <title>HTML یادگیری</title>
-   <link rel="icon" type="image/png"
-      href="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png">
+
+    <link rel="icon" type="image/png"
+        href="images/XSchool.png">
+
     <style>
-        /* اگر می‌خواهید موقعیت‌های لینک‌ها را بر اساس <body> تنظیم کنید، <body> را به relative بسازید */
-        body{
-            position: relative;   /* برای ایجاد یک بلوک «مقدار مرجع» */
-            font-family: 'B Nazanin', sans-serif;
-            font-size: 23px;
+        @font-face {
+    font-family: 'BNazanin';
+    src: url('B-NAZANIN.TTF') format('truetype');
+}
+
+        body {
+            position: relative;
+            font-family: 'BNazanin', Tahoma, sans-serif;
+            font-size: 20px;
             color: black;
             text-align: right;
+
+            background: url("images/GeneralBackground_optimized.webp") no-repeat center center fixed;
+            background-size: cover;
         }
-        .lang-en{
+
+        .lang-en {
             font-family: "Times New Roman", Times, serif;
             font-size: 18px;
-        text-decoration: none;}
+        }
 
-        
+        /* منوی بالا */
+
         .topMenu-right {
-    display: flex;
-    justify-content: center; /* وسط‌چین */
-    align-items: center;
-    gap: 20px; /* فاصله بین دکمه‌ها */
-    padding: 15px;
-    flex-wrap: wrap; /* در موبایل به خط بعد برود */
-    margin-left: 45cm;
-}
+            display: flex;
+            justify-content: flex-start;
+            direction: rtl;
+            gap: 20px;
+            padding: 5px;
+            margin-top: 20px;
+            padding-right: 20px; 
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .blueGradientButton {
-    text-decoration: none;
-    padding: 5px 5px;
-    border-radius: 20px;
-    color: #002060;
-    font-weight: bold;
-    font-size: 20px;
-    /* background: linear-gradient(135deg, #2196F3, #0D47A1); */
-    transition: all 0.3s ease;
-    }
+        .blueGradientButton {
+            text-decoration: none;
+            padding: 3px;
+            border-radius: 20px;
+            color: #002060;
+            transition: all 0.3s ease;
+        }
 
-    .blueGradientButton:hover {
-        background: #002060;
-        color: #fff;
-        border: 1px solid #002060;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-    .blueGradientButtonCurrent {
-    text-decoration: none;
-    padding: 5px 5px;
-    border-radius: 20px;
-    color: #002060;
-    font-weight: bold;
-    background: #eef4ff;
-    transition: all 0.3s ease;
-    font-size: 20px;
-    }
+        .blueGradientButton:hover {
+            background: #002060;
+            color: white;
+            border: 1px solid #002060;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    .blueGradientButtonCurrent:hover {
-        background: #002060;
-        color: #fff;
-        border: 1px solid #002060;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-    .hero{
-    text-align:center;
-    margin-top:150px;}
+        .blueGradientButtonCurrent {
+            text-decoration: none;
+            padding: 3px;
+            border-radius: 20px;
+            color: #002060;
+            background: #eef4ff;
+        }
 
-    .title{
-    color:black;
-    font-size:60px;
-    margin-bottom:0;
-    }
-
-    .subtitle{
-    color:black;
-    font-size:20px;
-    opacity:0;
-    animation: fadeIn 1.5s ease forwards;
-    animation-delay:2.2s;
-    margin-top:1px;}
-
-    @keyframes typing{
-    from{
-        width:0;
-    }
-    to{
-        width:100%;
-    }
-}
-
-    @keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-         body {
-        background: url("https://uploadkon.ir/uploads/51a130_26ebfd4c46-902f-4aab-a5f4-463fbb09fa43.png") no-repeat center center fixed;
-        background-size: cover;
-    }
-       
-
-     .wrapper {
+       .wrapper {
       display: flex;
       gap: 10px;
       height: 87vh; /* ارتفاع کلی دو باکس */ 
@@ -135,6 +92,8 @@
       direction: rtl;
       text-align: center;  
     }
+
+
 
     .link-item {
       display: block;
@@ -162,6 +121,8 @@
       text-decoration: underline;
     }
 
+  
+ 
     .code-box {
   direction: ltr;
   text-align: left;
@@ -213,13 +174,23 @@
     
 </head>
 <body>
-    <nav class="topMenu-right">
-    <a href="/NearFuture" id="button3" class="blueGradientButtonCurrent"><span class="lang-en">HTML</span>&nbsp;یادگیری🔎</a>
-    <a href="/about" id="button2" class="blueGradientButton">من کیم؟👩‍🎓</a>
-    <a href="/" id="button1" class="blueGradientButton">
-        خانه <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png" width="20" height="20">
-    </a>
+     <nav class="topMenu-right">
+        <a href="index.html" class="blueGradientButton">
+            <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png"
+                width="20"
+                height="20"
+                alt="logo">
+            خانه
+        </a>        
+        <a href="about.html" class="blueGradientButton">
+             👩‍🎓 من کیم؟
+        </a>
+        <a href="NearFuture.html" class="blueGradientButtonCurrent">
+             🔎 یادگیری <span class="lang-en">HTML</span>
+        </a>
+
     </nav>
+
 
     <div class="wrapper">
         <div class="box">
@@ -296,11 +267,11 @@
             
         </div>
     <div class="box right-box">
-        <p> <a href="/NearFuture" class="link-item" >مفاهیم اولیه</a> 
-        <a href="/HTMLTag" class="link-item">انواع تگ‌ها در <span class="lang-en">HTML</span></a>
-        <a href="/FirstWebPag" class="link-item" >ساخت اولین صفحه وب</a>
-        <a href="/Inspect" class="link-item" > دنیای <span class="lang-en">Inspect</span></a>
-        <a href="/InputOutput" class="link-item-current" >دریافت ورودی خروجی</a>
+        <p> <a href="NearFuture.html" class="link-item" >مفاهیم اولیه</a> 
+        <a href="HTMLTag.html" class="link-item">انواع تگ‌ها در <span class="lang-en">HTML</span></a>
+        <a href="FirstWebPag.html" class="link-item" >ساخت اولین صفحه وب</a>
+        <a href="Inspect.html" class="link-item" > دنیای <span class="lang-en">Inspect</span></a>
+        <a href="InputOutput.html" class="link-item-current" >دریافت ورودی خروجی</a>
 
          
     </p>

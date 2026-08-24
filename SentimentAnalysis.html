@@ -10,153 +10,289 @@
     <link rel="icon" type="image/png" href="images/XSchool.png">
 
     <style>
+
         @font-face {
             font-family: 'BNazanin';
             src: url('B-NAZANIN.TTF') format('truetype');
         }
 
+
+        /* =========================
+           BODY
+        ========================== */
+
         body {
+
             margin: 0;
+
             position: relative;
-            font-family: 'BNazanin', Tahoma, sans-serif;
+
+            font-family:
+                'BNazanin',
+                Tahoma,
+                sans-serif;
+
             font-size: 20px;
+
             color: black;
+
             text-align: right;
 
-            background: url("images/GeneralBackground_optimized.webp")
+
+            background:
+                url("images/GeneralBackground_optimized.webp")
                 no-repeat center center fixed;
 
             background-size: cover;
+
             min-height: 100vh;
         }
 
+
         .lang-en {
-            font-family: "Times New Roman", Times, serif;
+
+            font-family:
+                "Times New Roman",
+                Times,
+                serif;
+
             font-size: 18px;
         }
 
-        /* منوی بالا */
+
+        /* =========================
+           TOP MENU
+        ========================== */
 
         .topMenu-right {
+
             display: flex;
+
             justify-content: flex-start;
+
             gap: 20px;
+
             padding: 5px;
+
             margin-top: 20px;
+
             margin-right: 20px;
+
             font-size: 18px;
+
             font-weight: bold;
         }
 
+
         .blueGradientButton {
+
             text-decoration: none;
+
             padding: 3px;
+
             border-radius: 20px;
+
             color: #002060;
-            transition: all 0.3s ease;
+
+            transition:
+                all 0.3s ease;
         }
+
 
         .blueGradientButton:hover {
+
             background: #002060;
+
             color: white;
-            border: 1px solid #002060;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+            border:
+                1px solid #002060;
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 6px 15px
+                rgba(0, 0, 0, 0.2);
         }
 
+
         .blueGradientButtonCurrent {
+
             text-decoration: none;
+
             padding: 3px;
+
             border-radius: 20px;
+
             color: #002060;
+
             background: #eef4ff;
         }
 
-        /* بخش اصلی */
+
+        /* =========================
+           MAIN CONTAINER
+        ========================== */
 
         .container {
+
             max-width: 850px;
+
             margin: 70px auto;
+
             padding: 30px;
-            background: rgba(255, 255, 255, 0.88);
+
+            background:
+                rgba(255, 255, 255, 0.88);
+
             border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+
+            box-shadow:
+                0 8px 30px
+                rgba(0, 0, 0, 0.15);
+
             text-align: center;
         }
 
+
         h1 {
+
             color: #002060;
+
             margin-bottom: 10px;
         }
 
+
         .description {
+
             color: #444;
+
             margin-bottom: 30px;
         }
 
+
+        /* =========================
+           TEXTAREA
+        ========================== */
+
         textarea {
+
             width: 90%;
+
             min-height: 150px;
+
             padding: 15px;
 
-            border: 2px solid #d5def0;
+            border:
+                2px solid #d5def0;
+
             border-radius: 12px;
 
-            font-family: 'BNazanin', Tahoma, sans-serif;
+            font-family:
+                'BNazanin',
+                Tahoma,
+                sans-serif;
+
             font-size: 20px;
 
             resize: vertical;
 
             direction: rtl;
+
             text-align: right;
 
             outline: none;
         }
 
+
         textarea:focus {
+
             border-color: #002060;
         }
 
+
+        /* =========================
+           BUTTON
+        ========================== */
+
         button {
+
             margin-top: 20px;
-            padding: 10px 35px;
+
+            padding:
+                10px 35px;
 
             border: none;
+
             border-radius: 25px;
 
             background: #002060;
+
             color: white;
 
-            font-family: 'BNazanin', Tahoma, sans-serif;
+            font-family:
+                'BNazanin',
+                Tahoma,
+                sans-serif;
+
             font-size: 20px;
 
             cursor: pointer;
 
-            transition: all 0.3s ease;
+            transition:
+                all 0.3s ease;
         }
+
 
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.2);
         }
 
+
         button:disabled {
+
             background: #999;
-            cursor: not-allowed;
+
+            cursor:
+                not-allowed;
+
             transform: none;
+
             box-shadow: none;
         }
 
+
+        /* =========================
+           STATUS
+        ========================== */
+
         #status {
+
             margin-top: 20px;
+
             color: #555;
+
             min-height: 30px;
         }
 
+
+        /* =========================
+           RESULT
+        ========================== */
+
         .result {
+
             display: none;
 
             margin-top: 30px;
+
             padding: 25px;
 
             border-radius: 15px;
@@ -164,162 +300,312 @@
             background: #f5f8ff;
         }
 
+
+        .result-title {
+
+            font-size: 20px;
+        }
+
+
         .result-label {
+
+            margin-top: 10px;
+
             font-size: 30px;
+
             font-weight: bold;
+
             color: #002060;
         }
 
-        .score {
+
+        /* =========================
+           STARS
+        ========================== */
+
+        .stars {
+
             margin-top: 10px;
+
+            font-size: 36px;
+
+            direction: ltr;
+
+            letter-spacing: 5px;
+        }
+
+
+        /* =========================
+           SCORE
+        ========================== */
+
+        .score {
+
+            margin-top: 10px;
+
             font-size: 22px;
         }
 
+
+        /* =========================
+           PROGRESS BAR
+        ========================== */
+
         .progress-container {
+
             width: 80%;
+
             height: 18px;
 
             background: #ddd;
 
             border-radius: 10px;
 
-            margin: 15px auto;
+            margin:
+                15px auto;
 
             overflow: hidden;
         }
 
+
         .progress-bar {
+
             height: 100%;
+
             width: 0%;
 
             background: #002060;
 
-            transition: width 0.5s ease;
+            transition:
+                width 0.5s ease;
         }
 
+
+        /* =========================
+           MODEL INFO
+        ========================== */
+
         .model-info {
+
             margin-top: 35px;
 
             font-size: 15px;
+
             color: #666;
 
             direction: ltr;
         }
 
+
+        /* =========================
+           MOBILE
+        ========================== */
+
         @media (max-width: 768px) {
 
             .topMenu-right {
+
                 flex-wrap: wrap;
+
                 gap: 10px;
+
                 margin-right: 10px;
             }
 
+
             .container {
-                margin: 40px 15px;
+
+                margin:
+                    40px 15px;
+
                 padding: 20px;
             }
 
+
             textarea {
+
                 width: 90%;
             }
+
         }
+
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- منوی بالا -->
+
+    <!-- =========================
+         TOP MENU
+    ========================== -->
 
     <nav class="topMenu-right">
 
-        <a href="index.html" class="blueGradientButton">
+
+        <a href="index.html"
+           class="blueGradientButton">
+
             🏠 خانه
+
         </a>
 
-        <a href="about.html" class="blueGradientButton">
+
+        <a href="about.html"
+           class="blueGradientButton">
+
             👩‍🎓 من کیم؟
+
         </a>
 
-        <a href="NearFuture.html" class="blueGradientButton">
-            🔎 یادگیری <span class="lang-en">HTML</span>
+
+        <a href="NearFuture.html"
+           class="blueGradientButton">
+
+            🔎 یادگیری
+            <span class="lang-en">
+                HTML
+            </span>
+
         </a>
+
 
         <a href="SentimentAnalysis.html"
            class="blueGradientButtonCurrent">
+
             🤖 تحلیل احساسات
+
         </a>
+
 
     </nav>
 
 
-    <!-- محتوای اصلی -->
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <main class="container">
 
-        <h1>🤖 تحلیل احساسات</h1>
+
+        <h1>
+
+            🤖 تحلیل احساسات
+
+        </h1>
+
 
         <p class="description">
-            یک جمله فارسی وارد کنید تا مدل هوش مصنوعی احساس آن را تشخیص دهد.
+
+            یک جمله وارد کنید تا مدل هوش مصنوعی
+            احساس متن را در پنج سطح تحلیل کند.
+
         </p>
 
+
+
+        <!-- INPUT -->
 
         <textarea
             id="textInput"
             placeholder="مثلاً: من واقعاً از این دوره خیلی لذت بردم!">
         </textarea>
 
+
         <br>
 
 
+
+        <!-- BUTTON -->
+
         <button id="analyzeButton">
+
             تحلیل احساسات
+
         </button>
 
 
-        <div id="status"></div>
+
+        <!-- STATUS -->
+
+        <div id="status">
+
+            ⏳ در حال آماده‌سازی مدل...
+
+        </div>
 
 
-        <!-- نتیجه -->
 
-        <div id="result" class="result">
+        <!-- =========================
+             RESULT
+        ========================== -->
 
-            <div>
+        <div id="result"
+             class="result">
+
+
+            <div class="result-title">
+
                 احساس تشخیص داده شده:
+
             </div>
 
+
+            <!-- SENTIMENT -->
 
             <div id="resultLabel"
                  class="result-label">
+
             </div>
 
+
+            <!-- STARS -->
+
+            <div id="stars"
+                 class="stars">
+
+            </div>
+
+
+            <!-- SCORE -->
 
             <div class="score">
 
                 میزان اطمینان مدل:
 
-                <span id="scoreValue"></span>
+                <span id="scoreValue">
+
+                </span>
 
             </div>
 
+
+            <!-- PROGRESS -->
 
             <div class="progress-container">
 
                 <div id="progressBar"
                      class="progress-bar">
+
                 </div>
 
             </div>
 
+
         </div>
 
 
-        <!-- اطلاعات مدل -->
+
+        <!-- =========================
+             MODEL INFORMATION
+        ========================== -->
 
         <div class="model-info">
 
             Model:
-            HooshvareLab/bert-fa-base-uncased-sentiment-deepsentipers-binary
+            Xenova/bert-base-multilingual-uncased-sentiment
 
             <br>
 
@@ -327,69 +613,117 @@
 
         </div>
 
+
     </main>
 
 
-    <!-- AI Model -->
+
+    <!-- =========================
+         AI MODEL
+    ========================== -->
 
     <script type="module">
 
+
+        /* =========================
+           IMPORT TRANSFORMERS.JS
+        ========================== */
+
         import {
             pipeline
-        } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1";
+        }
+        from
+        "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1";
 
 
-        /* --------------------------------
-           DOM Elements
-        -------------------------------- */
+
+        /* =========================
+           DOM ELEMENTS
+        ========================== */
 
         const textInput =
-            document.getElementById("textInput");
+            document.getElementById(
+                "textInput"
+            );
+
 
         const analyzeButton =
-            document.getElementById("analyzeButton");
+            document.getElementById(
+                "analyzeButton"
+            );
+
 
         const status =
-            document.getElementById("status");
+            document.getElementById(
+                "status"
+            );
+
 
         const result =
-            document.getElementById("result");
+            document.getElementById(
+                "result"
+            );
+
 
         const resultLabel =
-            document.getElementById("resultLabel");
+            document.getElementById(
+                "resultLabel"
+            );
+
+
+        const stars =
+            document.getElementById(
+                "stars"
+            );
+
 
         const scoreValue =
-            document.getElementById("scoreValue");
+            document.getElementById(
+                "scoreValue"
+            );
+
 
         const progressBar =
-            document.getElementById("progressBar");
+            document.getElementById(
+                "progressBar"
+            );
 
 
-        /* --------------------------------
-           AI Classifier
-        -------------------------------- */
+
+        /* =========================
+           MODEL VARIABLE
+        ========================== */
 
         let classifier = null;
 
 
-        /* --------------------------------
-           Load AI Model
-        -------------------------------- */
+
+        /* =========================
+           LOAD MODEL
+        ========================== */
 
         async function loadModel() {
+
 
             status.innerText =
                 "⏳ در حال بارگذاری مدل هوش مصنوعی...";
 
-            analyzeButton.disabled = true;
+
+            analyzeButton.disabled =
+                true;
 
 
             try {
 
-                classifier = await pipeline(
-                    "sentiment-analysis",
-                    "HooshvareLab/bert-fa-base-uncased-sentiment-deepsentipers-binary"
-                );
+
+                classifier =
+                    await pipeline(
+
+                        "sentiment-analysis",
+
+                        "Xenova/bert-base-multilingual-uncased-sentiment"
+
+                    );
 
 
                 console.log(
@@ -400,11 +734,15 @@
                 status.innerText =
                     "✅ مدل آماده است. یک جمله وارد کنید.";
 
-                analyzeButton.disabled = false;
+
+                analyzeButton.disabled =
+                    false;
+
 
             }
 
             catch (error) {
+
 
                 console.error(
                     "Model loading error:",
@@ -413,51 +751,160 @@
 
 
                 status.innerText =
-                    "❌ خطا در بارگذاری مدل.";
+                    "❌ خطا در بارگذاری مدل. برای جزئیات F12 → Console را باز کنید.";
 
-                analyzeButton.disabled = true;
+
+                analyzeButton.disabled =
+                    true;
 
             }
 
         }
 
 
-        /* --------------------------------
-           Analyze Sentiment
-        -------------------------------- */
+
+        /* =========================
+           CONVERT STAR LEVEL
+        ========================== */
+
+        function getSentiment(
+            star
+        ) {
+
+
+            switch (star) {
+
+
+                case 1:
+
+                    return {
+
+                        label:
+                            "😡 خیلی منفی",
+
+                        stars:
+                            "★☆☆☆☆"
+
+                    };
+
+
+                case 2:
+
+                    return {
+
+                        label:
+                            "😞 منفی",
+
+                        stars:
+                            "★★☆☆☆"
+
+                    };
+
+
+                case 3:
+
+                    return {
+
+                        label:
+                            "😐 خنثی",
+
+                        stars:
+                            "★★★☆☆"
+
+                    };
+
+
+                case 4:
+
+                    return {
+
+                        label:
+                            "🙂 مثبت",
+
+                        stars:
+                            "★★★★☆"
+
+                    };
+
+
+                case 5:
+
+                    return {
+
+                        label:
+                            "😍 خیلی مثبت",
+
+                        stars:
+                            "★★★★★"
+
+                    };
+
+
+                default:
+
+                    return {
+
+                        label:
+                            "نامشخص",
+
+                        stars:
+                            "☆☆☆☆☆"
+
+                    };
+
+            }
+
+        }
+
+
+
+        /* =========================
+           ANALYZE SENTIMENT
+        ========================== */
 
         async function analyzeSentiment() {
+
 
             const text =
                 textInput.value.trim();
 
 
-            /* Empty text */
+
+            /* EMPTY INPUT */
 
             if (!text) {
+
 
                 status.innerText =
                     "⚠️ لطفاً ابتدا یک جمله وارد کنید.";
 
+
                 result.style.display =
                     "none";
+
 
                 return;
 
             }
 
 
-            /* Model not ready */
+
+            /* MODEL NOT READY */
 
             if (!classifier) {
+
 
                 status.innerText =
                     "⏳ مدل هنوز آماده نیست.";
 
+
                 return;
 
             }
 
+
+
+            /* DISABLE BUTTON */
 
             analyzeButton.disabled =
                 true;
@@ -471,12 +918,18 @@
                 "none";
 
 
+
             try {
 
-                /* Run model */
+
+                /* =========================
+                   RUN MODEL
+                ========================== */
 
                 const output =
-                    await classifier(text);
+                    await classifier(
+                        text
+                    );
 
 
                 console.log(
@@ -484,6 +937,11 @@
                     output
                 );
 
+
+
+                /* =========================
+                   GET PREDICTION
+                ========================== */
 
                 const prediction =
                     output[0];
@@ -497,63 +955,77 @@
                     prediction.score;
 
 
-                /* --------------------------------
-                   Convert label to Persian
-                -------------------------------- */
 
-                let persianLabel;
-
-
-                if (
-                    label === "POSITIVE" ||
-                    label === "LABEL_1"
-                ) {
-
-                    persianLabel =
-                        "😊 مثبت";
-
-                }
-
-                else if (
-                    label === "NEGATIVE" ||
-                    label === "LABEL_0"
-                ) {
-
-                    persianLabel =
-                        "😞 منفی";
-
-                }
-
-                else {
-
-                    persianLabel =
-                        label;
-
-                }
+                console.log(
+                    "Label:",
+                    label
+                );
 
 
-                /* --------------------------------
-                   Confidence
-                -------------------------------- */
-
-                const percentage =
-                    (score * 100).toFixed(2);
+                console.log(
+                    "Score:",
+                    score
+                );
 
 
-                /* --------------------------------
-                   Display result
-                -------------------------------- */
+
+                /* =========================
+                   EXTRACT STAR NUMBER
+                ========================== */
+
+                const starNumber =
+                    parseInt(
+
+                        label
+                            .replace(
+                                "stars",
+                                ""
+                            )
+                            .replace(
+                                "star",
+                                ""
+                            )
+                            .trim()
+
+                    );
+
+
+
+                /* =========================
+                   GET SENTIMENT
+                ========================== */
+
+                const sentiment =
+                    getSentiment(
+                        starNumber
+                    );
+
+
+
+                /* =========================
+                   DISPLAY RESULT
+                ========================== */
 
                 resultLabel.innerText =
-                    persianLabel;
+                    sentiment.label;
+
+
+                stars.innerText =
+                    sentiment.stars;
 
 
                 scoreValue.innerText =
-                    percentage + "%";
+                    (
+                        score * 100
+                    ).toFixed(2)
+                    + "%";
 
 
                 progressBar.style.width =
-                    percentage + "%";
+                    (
+                        score * 100
+                    )
+                    + "%";
 
 
                 result.style.display =
@@ -563,9 +1035,11 @@
                 status.innerText =
                     "✅ تحلیل با موفقیت انجام شد.";
 
+
             }
 
             catch (error) {
+
 
                 console.error(
                     "Prediction error:",
@@ -579,29 +1053,37 @@
             }
 
 
+
             analyzeButton.disabled =
                 false;
 
         }
 
 
-        /* --------------------------------
-           Button Event
-        -------------------------------- */
+
+        /* =========================
+           BUTTON EVENT
+        ========================== */
 
         analyzeButton.addEventListener(
+
             "click",
+
             analyzeSentiment
+
         );
 
 
-        /* --------------------------------
-           Load model when page opens
-        -------------------------------- */
+
+        /* =========================
+           START MODEL
+        ========================== */
 
         loadModel();
 
+
     </script>
+
 
 </body>
 

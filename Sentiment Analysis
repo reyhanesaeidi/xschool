@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>من کیم؟</title>
+
+    <link rel="icon" type="image/png"
+        href="images/XSchool.png">
+
+    <style>
+        @font-face {
+            font-family: 'BNazanin';
+            src: url('B-NAZANIN.TTF') format('truetype');
+            font-size: 30px;
+            color: red;
+            text-align: right;
+        }
+
+        body {
+            position: relative;
+            font-family: 'BNazanin', Tahoma, sans-serif;
+            font-size: 20px;
+            color: black;
+            text-align: right;
+
+            background: url("images/GeneralBackground_optimized.webp") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .lang-en {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+        }
+
+        /* منوی بالا */
+
+        .topMenu-right {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 5px;
+            margin-top: 20px;
+            margin-right:20px; 
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .blueGradientButton {
+            text-decoration: none;
+            padding: 3px;
+            border-radius: 20px;
+            color: #002060;
+            transition: all 0.3s ease;
+        }
+
+        .blueGradientButton:hover {
+            background: #002060;
+            color: white;
+            border: 1px solid #002060;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blueGradientButtonCurrent {
+            text-decoration: none;
+            padding: 3px;
+            border-radius: 20px;
+            color: #002060;
+            background: #eef4ff;
+        }
+
+
+        .wrapper {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+
+        .box {
+             flex: 1;
+             border-radius: 10px;
+             padding: 15px;
+             overflow-y: auto; /* اسکرول عمودی */
+             margin-top: 50px;
+             direction: rtl;
+             text-align: justify;
+             font-family: 'B Nazanin', sans-serif;
+             max-width: 200px;
+             direction: rtl;
+             text-align: center;
+        }
+
+        .right-box {
+            max-width: 900px;
+            margin-top: 50px;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #002060;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            display: block;
+            margin-top: 15px;
+            color: #002060;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column-reverse;
+            }
+
+            .right-box {
+                width: 100%;
+            }
+
+            body {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+   <nav class="topMenu-right">
+        <a href="index.html" class="blueGradientButton">
+            <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png"
+                width="20"
+                height="20"
+                alt="logo">
+            خانه
+        </a>        
+        <a href="about.html" class="blueGradientButtonCurrent">
+             👩‍🎓 من کیم؟
+        </a>
+        <a href="NearFuture.html" class="blueGradientButton">
+             🔎 یادگیری <span class="lang-en">HTML</span>
+        </a>
+
+    </nav>
+
+</body>
+
+</html>

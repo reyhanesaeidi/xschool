@@ -5,29 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>من کیم؟</title>
+    <title>تحلیل احساسات | XSchool</title>
 
-    <link rel="icon" type="image/png"
-        href="images/XSchool.png">
+    <link rel="icon" type="image/png" href="images/XSchool.png">
 
     <style>
         @font-face {
             font-family: 'BNazanin';
             src: url('B-NAZANIN.TTF') format('truetype');
-            font-size: 30px;
-            color: red;
-            text-align: right;
         }
 
         body {
+            margin: 0;
             position: relative;
             font-family: 'BNazanin', Tahoma, sans-serif;
             font-size: 20px;
             color: black;
             text-align: right;
 
-            background: url("images/GeneralBackground_optimized.webp") no-repeat center center fixed;
+            background: url("images/GeneralBackground_optimized.webp")
+                no-repeat center center fixed;
             background-size: cover;
+
+            min-height: 100vh;
         }
 
         .lang-en {
@@ -43,7 +43,7 @@
             gap: 20px;
             padding: 5px;
             margin-top: 20px;
-            margin-right:20px; 
+            margin-right: 20px;
             font-size: 18px;
             font-weight: bold;
         }
@@ -72,64 +72,134 @@
             background: #eef4ff;
         }
 
+        /* بخش اصلی */
 
-        .wrapper {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-top: 40px;
+        .container {
+            max-width: 850px;
+            margin: 70px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
         }
 
-        .box {
-             flex: 1;
-             border-radius: 10px;
-             padding: 15px;
-             overflow-y: auto; /* اسکرول عمودی */
-             margin-top: 50px;
-             direction: rtl;
-             text-align: justify;
-             font-family: 'B Nazanin', sans-serif;
-             max-width: 200px;
-             direction: rtl;
-             text-align: center;
-        }
-
-        .right-box {
-            max-width: 900px;
-            margin-top: 50px;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #002060;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .contact-link {
-            display: block;
-            margin-top: 15px;
+        h1 {
             color: #002060;
-            text-decoration: none;
+            margin-bottom: 10px;
         }
 
-        .contact-link:hover {
-            text-decoration: underline;
+        .description {
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 90%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #d5def0;
+            border-radius: 12px;
+            font-family: 'BNazanin', Tahoma, sans-serif;
+            font-size: 20px;
+            resize: vertical;
+            direction: ltr;
+            text-align: left;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #002060;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 25px;
+            background: #002060;
+            color: white;
+            font-family: 'BNazanin', Tahoma, sans-serif;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:disabled {
+            background: #999;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #status {
+            margin-top: 20px;
+            color: #555;
+            min-height: 30px;
+        }
+
+        .result {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            background: #f5f8ff;
+        }
+
+        .result-label {
+            font-size: 30px;
+            font-weight: bold;
+            color: #002060;
+        }
+
+        .score {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        .progress-container {
+            width: 80%;
+            height: 18px;
+            background: #ddd;
+            border-radius: 10px;
+            margin: 15px auto;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #002060;
+            transition: width 0.5s ease;
+        }
+
+        .model-info {
+            margin-top: 35px;
+            font-size: 15px;
+            color: #666;
+            direction: ltr;
         }
 
         @media (max-width: 768px) {
-            .wrapper {
-                flex-direction: column-reverse;
+
+            .topMenu-right {
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-right: 10px;
             }
 
-            .right-box {
-                width: 100%;
+            .container {
+                margin: 40px 15px;
+                padding: 20px;
             }
 
-            body {
-                padding: 0 15px;
+            textarea {
+                width: 90%;
             }
         }
     </style>
@@ -137,26 +207,266 @@
 
 <body>
 
-   <nav class="topMenu-right">
+    <!-- منوی بالا -->
+
+    <nav class="topMenu-right">
+
         <a href="index.html" class="blueGradientButton">
-            <img src="https://uploadkon.ir/uploads/153c30_26X-school-Copy.png"
-                width="20"
-                height="20"
-                alt="logo">
-            خانه
-        </a>        
-        <a href="about.html" class="blueGradientButton">
-             👩‍🎓 من کیم؟
-        </a>
-        <a href="NearFuture.html" class="blueGradientButton">
-             🔎 یادگیری <span class="lang-en">HTML</span>
+            🏠 خانه
         </a>
 
-        <a href="SentimentAnalysis.html" class="blueGradientButtonCurrent">
-             تحلیل احساسات 
-        </a>             
+        <a href="about.html" class="blueGradientButton">
+            👩‍🎓 من کیم؟
+        </a>
+
+        <a href="NearFuture.html" class="blueGradientButton">
+            🔎 یادگیری <span class="lang-en">HTML</span>
+        </a>
+
+        <a href="SentimentAnalysis.html"
+           class="blueGradientButtonCurrent">
+            🤖 تحلیل احساسات
+        </a>
 
     </nav>
+
+
+    <!-- محتوای اصلی -->
+
+    <main class="container">
+
+        <h1>🤖 تحلیل احساسات</h1>
+
+        <p class="description">
+            یک جمله انگلیسی وارد کنید تا مدل هوش مصنوعی احساس آن را تشخیص دهد.
+        </p>
+
+        <textarea
+            id="textInput"
+            placeholder="For example: I really enjoyed this course!">
+        </textarea>
+
+        <br>
+
+        <button id="analyzeButton">
+            تحلیل احساسات
+        </button>
+
+        <div id="status"></div>
+
+        <div id="result" class="result">
+
+            <div>
+                احساس تشخیص داده شده:
+            </div>
+
+            <div id="resultLabel" class="result-label">
+            </div>
+
+            <div class="score">
+                میزان اطمینان مدل:
+                <span id="scoreValue"></span>
+            </div>
+
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+        </div>
+
+        <div class="model-info">
+            Model:
+            Xenova/distilbert-base-uncased-finetuned-sst-2-english
+            <br>
+            Powered by Transformers.js
+        </div>
+
+    </main>
+
+
+    <!-- AI Model -->
+
+    <script type="module">
+
+        import {
+            pipeline
+        } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1";
+
+
+        const textInput =
+            document.getElementById("textInput");
+
+        const analyzeButton =
+            document.getElementById("analyzeButton");
+
+        const status =
+            document.getElementById("status");
+
+        const result =
+            document.getElementById("result");
+
+        const resultLabel =
+            document.getElementById("resultLabel");
+
+        const scoreValue =
+            document.getElementById("scoreValue");
+
+        const progressBar =
+            document.getElementById("progressBar");
+
+
+        let classifier = null;
+
+
+        /*
+         * Load the AI model
+         */
+
+        async function loadModel() {
+
+            status.innerText =
+                "⏳ در حال بارگذاری مدل هوش مصنوعی...";
+
+            analyzeButton.disabled = true;
+
+            try {
+
+                classifier = await pipeline(
+                    "sentiment-analysis",
+                    "Xenova/distilbert-base-uncased-finetuned-sst-2-english",
+                    {
+                        dtype: "q4"
+                    }
+                );
+
+                status.innerText =
+                    "✅ مدل آماده است. یک جمله وارد کنید.";
+
+                analyzeButton.disabled = false;
+
+            } catch (error) {
+
+                console.error(error);
+
+                status.innerText =
+                    "❌ خطا در بارگذاری مدل.";
+
+            }
+        }
+
+
+        /*
+         * Analyze text
+         */
+
+        async function analyzeSentiment() {
+
+            const text =
+                textInput.value.trim();
+
+            if (!text) {
+
+                status.innerText =
+                    "⚠️ لطفاً ابتدا یک جمله وارد کنید.";
+
+                return;
+            }
+
+            if (!classifier) {
+
+                status.innerText =
+                    "⏳ مدل هنوز آماده نیست.";
+
+                return;
+            }
+
+
+            analyzeButton.disabled = true;
+
+            status.innerText =
+                "🔎 در حال تحلیل متن...";
+
+            result.style.display = "none";
+
+
+            try {
+
+                const output =
+                    await classifier(text);
+
+
+                const prediction =
+                    output[0];
+
+                const label =
+                    prediction.label;
+
+                const score =
+                    prediction.score;
+
+
+                let persianLabel;
+
+                if (label === "POSITIVE") {
+
+                    persianLabel =
+                        "😊 مثبت";
+
+                } else {
+
+                    persianLabel =
+                        "😞 منفی";
+
+                }
+
+
+                const percentage =
+                    (score * 100).toFixed(2);
+
+
+                resultLabel.innerText =
+                    persianLabel;
+
+                scoreValue.innerText =
+                    percentage + "%";
+
+                progressBar.style.width =
+                    percentage + "%";
+
+
+                result.style.display =
+                    "block";
+
+                status.innerText =
+                    "✅ تحلیل با موفقیت انجام شد.";
+
+            } catch (error) {
+
+                console.error(error);
+
+                status.innerText =
+                    "❌ هنگام تحلیل متن خطایی رخ داد.";
+
+            }
+
+
+            analyzeButton.disabled = false;
+        }
+
+
+        analyzeButton.addEventListener(
+            "click",
+            analyzeSentiment
+        );
+
+
+        /*
+         * Load model when page opens
+         */
+
+        loadModel();
+
+    </script>
 
 </body>
 

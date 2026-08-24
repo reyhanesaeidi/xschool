@@ -25,8 +25,8 @@
 
             background: url("images/GeneralBackground_optimized.webp")
                 no-repeat center center fixed;
-            background-size: cover;
 
+            background-size: cover;
             min-height: 100vh;
         }
 
@@ -98,13 +98,18 @@
             width: 90%;
             min-height: 150px;
             padding: 15px;
+
             border: 2px solid #d5def0;
             border-radius: 12px;
+
             font-family: 'BNazanin', Tahoma, sans-serif;
             font-size: 20px;
+
             resize: vertical;
-            direction: ltr;
-            text-align: left;
+
+            direction: rtl;
+            text-align: right;
+
             outline: none;
         }
 
@@ -115,13 +120,18 @@
         button {
             margin-top: 20px;
             padding: 10px 35px;
+
             border: none;
             border-radius: 25px;
+
             background: #002060;
             color: white;
+
             font-family: 'BNazanin', Tahoma, sans-serif;
             font-size: 20px;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
         }
 
@@ -145,9 +155,12 @@
 
         .result {
             display: none;
+
             margin-top: 30px;
             padding: 25px;
+
             border-radius: 15px;
+
             background: #f5f8ff;
         }
 
@@ -165,23 +178,31 @@
         .progress-container {
             width: 80%;
             height: 18px;
+
             background: #ddd;
+
             border-radius: 10px;
+
             margin: 15px auto;
+
             overflow: hidden;
         }
 
         .progress-bar {
             height: 100%;
             width: 0%;
+
             background: #002060;
+
             transition: width 0.5s ease;
         }
 
         .model-info {
             margin-top: 35px;
+
             font-size: 15px;
             color: #666;
+
             direction: ltr;
         }
 
@@ -204,6 +225,7 @@
         }
     </style>
 </head>
+
 
 <body>
 
@@ -238,21 +260,27 @@
         <h1>🤖 تحلیل احساسات</h1>
 
         <p class="description">
-            یک جمله انگلیسی وارد کنید تا مدل هوش مصنوعی احساس آن را تشخیص دهد.
+            یک جمله فارسی وارد کنید تا مدل هوش مصنوعی احساس آن را تشخیص دهد.
         </p>
+
 
         <textarea
             id="textInput"
-            placeholder="For example: I really enjoyed this course!">
+            placeholder="مثلاً: من واقعاً از این دوره خیلی لذت بردم!">
         </textarea>
 
         <br>
+
 
         <button id="analyzeButton">
             تحلیل احساسات
         </button>
 
+
         <div id="status"></div>
+
+
+        <!-- نتیجه -->
 
         <div id="result" class="result">
 
@@ -260,25 +288,43 @@
                 احساس تشخیص داده شده:
             </div>
 
-            <div id="resultLabel" class="result-label">
+
+            <div id="resultLabel"
+                 class="result-label">
             </div>
+
 
             <div class="score">
+
                 میزان اطمینان مدل:
+
                 <span id="scoreValue"></span>
+
             </div>
 
+
             <div class="progress-container">
-                <div id="progressBar" class="progress-bar"></div>
+
+                <div id="progressBar"
+                     class="progress-bar">
+                </div>
+
             </div>
 
         </div>
 
+
+        <!-- اطلاعات مدل -->
+
         <div class="model-info">
+
             Model:
-            Xenova/distilbert-base-uncased-finetuned-sst-2-english
+            HooshvareLab/bert-fa-base-uncased-sentiment-deepsentipers-binary
+
             <br>
+
             Powered by Transformers.js
+
         </div>
 
     </main>
@@ -292,6 +338,10 @@
             pipeline
         } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.1";
 
+
+        /* --------------------------------
+           DOM Elements
+        -------------------------------- */
 
         const textInput =
             document.getElementById("textInput");
@@ -315,12 +365,16 @@
             document.getElementById("progressBar");
 
 
+        /* --------------------------------
+           AI Classifier
+        -------------------------------- */
+
         let classifier = null;
 
 
-        /*
-         * Load the AI model
-         */
+        /* --------------------------------
+           Load AI Model
+        -------------------------------- */
 
         async function loadModel() {
 
@@ -329,45 +383,71 @@
 
             analyzeButton.disabled = true;
 
+
             try {
 
-                classifier = pipeline(
-                            "sentiment-analysis",
-                            model="HooshvareLab/bert-fa-base-uncased-sentiment-deepsentipers-binary")
+                classifier = await pipeline(
+                    "sentiment-analysis",
+                    "HooshvareLab/bert-fa-base-uncased-sentiment-deepsentipers-binary"
                 );
+
+
+                console.log(
+                    "Model loaded successfully."
+                );
+
 
                 status.innerText =
                     "✅ مدل آماده است. یک جمله وارد کنید.";
 
                 analyzeButton.disabled = false;
 
-            } catch (error) {
+            }
 
-                console.error(error);
+            catch (error) {
+
+                console.error(
+                    "Model loading error:",
+                    error
+                );
+
 
                 status.innerText =
                     "❌ خطا در بارگذاری مدل.";
 
+                analyzeButton.disabled = true;
+
             }
+
         }
 
 
-        /*
-         * Analyze text
-         */
+        /* --------------------------------
+           Analyze Sentiment
+        -------------------------------- */
 
         async function analyzeSentiment() {
 
             const text =
                 textInput.value.trim();
 
+
+            /* Empty text */
+
             if (!text) {
 
                 status.innerText =
                     "⚠️ لطفاً ابتدا یک جمله وارد کنید.";
 
+                result.style.display =
+                    "none";
+
                 return;
+
             }
+
+
+            /* Model not ready */
 
             if (!classifier) {
 
@@ -375,57 +455,102 @@
                     "⏳ مدل هنوز آماده نیست.";
 
                 return;
+
             }
 
 
-            analyzeButton.disabled = true;
+            analyzeButton.disabled =
+                true;
+
 
             status.innerText =
                 "🔎 در حال تحلیل متن...";
 
-            result.style.display = "none";
+
+            result.style.display =
+                "none";
 
 
             try {
+
+                /* Run model */
 
                 const output =
                     await classifier(text);
 
 
+                console.log(
+                    "Model output:",
+                    output
+                );
+
+
                 const prediction =
                     output[0];
 
+
                 const label =
                     prediction.label;
+
 
                 const score =
                     prediction.score;
 
 
+                /* --------------------------------
+                   Convert label to Persian
+                -------------------------------- */
+
                 let persianLabel;
 
-                if (label === "POSITIVE") {
+
+                if (
+                    label === "POSITIVE" ||
+                    label === "LABEL_1"
+                ) {
 
                     persianLabel =
                         "😊 مثبت";
 
-                } else {
+                }
+
+                else if (
+                    label === "NEGATIVE" ||
+                    label === "LABEL_0"
+                ) {
 
                     persianLabel =
                         "😞 منفی";
 
                 }
 
+                else {
+
+                    persianLabel =
+                        label;
+
+                }
+
+
+                /* --------------------------------
+                   Confidence
+                -------------------------------- */
 
                 const percentage =
                     (score * 100).toFixed(2);
 
 
+                /* --------------------------------
+                   Display result
+                -------------------------------- */
+
                 resultLabel.innerText =
                     persianLabel;
 
+
                 scoreValue.innerText =
                     percentage + "%";
+
 
                 progressBar.style.width =
                     percentage + "%";
@@ -434,12 +559,19 @@
                 result.style.display =
                     "block";
 
+
                 status.innerText =
                     "✅ تحلیل با موفقیت انجام شد.";
 
-            } catch (error) {
+            }
 
-                console.error(error);
+            catch (error) {
+
+                console.error(
+                    "Prediction error:",
+                    error
+                );
+
 
                 status.innerText =
                     "❌ هنگام تحلیل متن خطایی رخ داد.";
@@ -447,9 +579,15 @@
             }
 
 
-            analyzeButton.disabled = false;
+            analyzeButton.disabled =
+                false;
+
         }
 
+
+        /* --------------------------------
+           Button Event
+        -------------------------------- */
 
         analyzeButton.addEventListener(
             "click",
@@ -457,9 +595,9 @@
         );
 
 
-        /*
-         * Load model when page opens
-         */
+        /* --------------------------------
+           Load model when page opens
+        -------------------------------- */
 
         loadModel();
 
